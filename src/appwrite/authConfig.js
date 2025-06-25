@@ -1,6 +1,6 @@
 import conf from '../conf/conf';
 import { Client, Account, ID, OAuthProvider } from 'appwrite';
-
+import Input from '../Components/Input'
 export class AppService {
   client = new Client();
   account;
@@ -31,7 +31,7 @@ export class AppService {
     }
   }
 
-  async loginWithAuth0() {
+   async loginWithAuth0() {
     try {
       return await this.account.createOAuth2Session(
         OAuthProvider.Auth0,
