@@ -30,13 +30,12 @@ export class AppService {
       console.error('Error logging out user:', error);
     }
   }
-
-   async loginWithAuth0() {
+  async loginWithAuth0() {
     try {
       return await this.account.createOAuth2Session(
         OAuthProvider.Auth0,
-        conf.auth0Callback,
-        conf.auth0Failure
+        'https://flashcard-master-xi.vercel.app/oauth/callback',
+        'https://flashcard-master-xi.vercel.app/login'
       );
     } catch (e) {
       console.error('Failed logging in with Auth0:', e);
